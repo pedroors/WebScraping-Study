@@ -24,11 +24,11 @@ for noticia in noticias:
         # print('Subtitulo da matéria:\n', subtitulo.text)
         lista_noticias.append([titulo.text, subtitulo.text, titulo['href']])
     else:
-        lista_noticias.append([titulo.text, '', ''])
+        lista_noticias.append([titulo.text, '', titulo['href']])
 
 
 news = pd.DataFrame(lista_noticias, columns=['Titulo', 'Subtitulo', 'Link'])
 
 news.to_excel('Noticias.xlsx', index=False)
 
-#print(news)
+print(news)
